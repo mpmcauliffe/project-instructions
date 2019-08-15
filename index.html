@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
+            integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
+            crossorigin='anonymous' />
+
+        <link rel='stylesheet' 
+            href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+
+        <link rel='stylesheet' href='./assets/index.css' />
+
+        <title>Pip Producer Instructions</title>
+    </head>
+
+    <body>
+        <div class='header'>
+            <a  
+                target='blank'
+                href='https://fierce-springs-23091.herokuapp.com/' >
+
+                <img 
+                    src='./assets/logo-long.png' 
+                    alt='pip-producers' 
+                    class='logo' />
+            </a>
+
+            <p class='update'><em>Updated August 14th, 2019</em></p>
+        </div>
+        
+        
+        <div class='container sec'>
+            <h2>Pip producers is a blog site for currency and day traders.</h2>
+
+            <p>Pip producers is built on the MERN stack architecture. 
+                <em>MongoDB, Express, React, Node js</em></p>
+        </div>
+        
+
+        <div class='container sec'>
+            <h2>Initial Setup</h2>
+            <p>If you are not running the application locally you can skip to "Inside the Application"</p>
+            
+            <br />
+            <h3>Setup prerequisits:</h3>
+            <ul>
+                <li>Internet connection</li>
+                <li>Node js and NPM installed</li>
+                <li>Terminal access</li>
+                <li>Basic knowledge of each item</li>
+            </ul>
+            <br />
+
+            <p>1) The project can be cloned directly from the git repository or downloaded.</p>
+
+            <p>2) Run the following scripts from the root directory to installdependencies:</p>
+            <pre>
+                npm install
+                npm run client-install
+            </pre>
+            <p><em>***the scripts above will work with yarn</em></p>
+
+            <p>To connect to a database the URI should be placed within a file called default.json 
+            and placed inside theconfig folder of the root directory. The project will work with any 
+            Mongo shell i.e. RoboMongo or mlab</p>
+            <p>The database can be named anything as long as the DB URI contains the correct title</p>
+            <p><em>Inside of default.json</em></p>
+            <pre>
+                    {
+                        'mongoURI": "mongodb://<<em>username</em>>:<<em>dbpassword</em>>@<<em>dsreference</em>>.mlab.com:31207/<em>pip_producer</em>",
+                        "JWT_SECRET": "<<em>secret random string here</em>>"
+                    }
+            </pre>
+
+            <p>3) Use the following scripts to run the application:</p>
+            <pre>
+                <em>Run server on port 5000, and client on port 3000</em>
+                npm run dev
+                <br />
+                <em>Only start server on port 5000</em>
+                npm start
+                <br />
+                <em>Only start server with watch on port 5000</em>
+                npm run server
+                <br />
+                <em>Only run client (port 3000) without server</em>
+                npm run client
+            </pre>
+            <p><em>***the scripts above will work with yarn</em></p>
+        </div>
+        
+
+        <div class='container'>
+            <h2>Inside the Application</h2>
+
+        </div>
+        
+
+    </body>
+</html>
