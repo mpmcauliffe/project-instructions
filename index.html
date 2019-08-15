@@ -5,6 +5,8 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='ie=edge'>
 
+        <link rel='shortcut icon' href='./assets/favicon.ico' />
+
         <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
             integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
             crossorigin='anonymous' />
@@ -49,7 +51,7 @@
             <h3>Setup prerequisits:</h3>
             <ul>
                 <li>Internet connection</li>
-                <li>Node js and NPM installed</li>
+                <li>Node js and NPM (or Yarn) installed</li>
                 <li>Terminal access</li>
                 <li>Basic knowledge of each item</li>
             </ul>
@@ -131,7 +133,7 @@
 
             <h3>Creating Blogs</h3>
             <p>To create a blog use the 'Create' button on the navbar. The data model for a blog contains 
-            X elements.</p>
+            6 elements.</p>
 
             <ul>
                 <li>Title</li>
@@ -149,11 +151,18 @@
             </ul>
             <p><em>**Publish option is set to draft by default. If you wish the publish the blog simply select 
             'publish' on the 'publish/draft' button assemby.</em></p>
+
+            <h3>Reading Blogs</h3>
+            <p>To find the list page click 'blog' on the left side of the nav bar. If you are logged in as 
+            a user you will see a page titled articles which will list out the blogs. The most current 4-5 Blogs
+            also appear at the bottom of any blog. If you are logged in as a contributor or an admin you will 
+            have the option on the list page to switch between published and drafts. Contributors will be able
+            to read drafts from other contributors, but they will not be able to edit them.</p>
             
             <h3>Updating Blogs</h3>
             <p>A contributor can update any blog, published or draft, they themselves created. Admins can 
             update any blog on the site. Clicking the 'edit' button on the edit bar will bring the user 
-            to a page that looks like the <em>create</em> page. The difference is the information will be 
+            to a page that looks like the <em>create</em> page. The difference is the information will be auto 
             filled into the inputs. The date is the only input that doesn't auto fill and must be re-entered</p>
 
             <h3>Deleting Blogs</h3>
@@ -163,8 +172,13 @@
 
             <p>Contributors can delete any blog or draft they create. Admins can delete any blog or draft.</p>
 
-            <p><strong>Note:</strong><em> The developers at Pip Producers kindly ask users not delete blogs they 
+            <p><strong>Note:</strong><em> The developers at Pip Producers kindly ask users not to delete blogs they 
             didn't create. This will help keep the site stocked with dummy blogs for future users.</em></p>
+
+            <h3>Updating Users</h3>
+            <p>The site currently supports updating users to 'contributor' or 'admin' status. Only admins 
+            are able to update users. Once an admin is created it cannot be undone. Currently the site does 
+            not have a way to delete users.</p>
 
             <h3>Dummy Users</h3>
             <p>A user can create their own user account which will instantiate a new account with <em>user</em>
@@ -272,7 +286,21 @@
             unexpected behavior and could be the result of a bug.</p>
 
             <p>Currently this site does not have an alert system. Alerts are pending for future updates.</p>
+            <br /><br /><br />
         </div>
+
+
+        <div class='container'>
+            <h2>Future Updates</h2>
+
+            <ul>
+                <li>Pip button API</li>
+                <li>Scorebar utility</li>
+                <li>Alerts</li>
+                <li>Account deletion</li>
+            </ul>
+        </div>
+
 
         <h6>Developed by Michael Paul McAuliffe &copy; 2019</h6>
     </body>
