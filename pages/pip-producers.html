@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <link rel='shortcut icon' href='../assets/img/pip-producers/favicon.ico' />
+
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
+        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
+        crossorigin='anonymous' />
+
+    <link rel='stylesheet' 
+        href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+        
+    <link 
+        rel='stylesheet' 
+        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' 
+        integrity='sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=' 
+        crossorigin='anonymous' />
+    
+    <link rel='stylesheet' href='../assets/index.css' />
+
+    <title>KIT | Pip Producers</title>
+</head>
+    <body>
+        <nav>
+            <a href='../index.html' class='hov-cursor'>
+                <i class="fas fa-home fa-3x hov-cursor"></i>
+            </a>
+        
+            <div class='nav-links'>
+                <a href='./pages/bookwormz.html'>Bookwormz</a>
+                <a href='./pages/racemate.html'>Racemate</a>
+                <a href='./pages/pip-producers.html' class='no-link'>Pip Producers</a>
+
+            </div>
+        </nav>
+
+
+        <div class='header'>
+            <a  
+                target='blank'
+                href='https://fierce-springs-23091.herokuapp.com/' >
+
+                <img 
+                    src='../assets/img/pip-producers/logo-long.png' 
+                    alt='pip-producers' 
+                    class='logo' />
+            </a>
+
+            <p class='update'><em>Updated December 16th, 2020</em></p>
+        </div>
+        
+        
+        <div class='container sec'>
+            <h2>Pip producers is a blog site for currency and day traders.</h2>
+
+            <p>Pip producers is built on the MERN stack architecture. 
+                <em>MongoDB, Express, React, Node js</em></p>
+        </div>
+        
+
+        <div class='container sec'>
+            <h2>Initial Setup</h2>
+            <p>If you are not running the application locally you can skip to "Inside the Application"</p>
+            
+            <br />
+            <h3>Setup prerequisits:</h3>
+            <ul>
+                <li>Internet connection</li>
+                <li>Node js and NPM (or Yarn) installed</li>
+                <li>Terminal access</li>
+                <li>Basic knowledge of each item</li>
+            </ul>
+            <br />
+
+            <p><strong>1)</strong> The project can be cloned directly from the git repository or downloaded.</p>
+
+            <p><strong>2)</strong> Run the following scripts from the root directory to install dependencies:</p>
+            <pre>
+        $ npm install
+        $ npm run client-install
+        <br />
+        <em>***the scripts above will work with yarn</em>
+            </pre>
+            
+
+            <p><strong>3)</strong> To connect to a database the URI should be placed within a file called default.json 
+            and placed inside theconfig folder of the root directory. The project will work with any 
+            Mongo shell i.e. RoboMongo or mLab</p>
+
+            <p>Click <a href='https://robomongo.org/download' target='blank'>here for RoboMongo</a></p>
+            <p>Click 
+                <a href='https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_footprint_row_search_brand_phrase_intent_test_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=p&utm_ad_campaign_id=11295578158&gclid=CjwKCAiA_eb-BRB2EiwAGBnXXk1GDlHaGIr8Jag00S2wrgXiKaJabg8LF7stJv91D6GPK3WurOkcGRoCw9QQAvD_BwE' 
+                    target='blank'>
+                    here for MongoAtlas
+                </a>
+            </p>
+
+            <p>Input the information that corresponds to your database. The database can be named anything 
+            as long as the DB URI contains the correct title</p>
+            <p><em>Inside of default.json</em></p>
+            "mongodb+srv://ursamajor:A8pV4LVlRyqgXXxu@cluster0.kng3h.mongodb.net/pip-producers?retryWrites=true&w=majority"
+            <pre>
+        {
+            'mongoURI": "mongodb://<<em>username</em>>:<<em>dbpassword</em>>@cluster0.kng3h.mongodb.net/<em>pip-producer</em>?retryWrites=true&w=majority",
+            "JWT_SECRET": "<<em>secret random string here</em>>"
+        }
+            </pre>
+
+            <p><strong>4)</strong> Use the following scripts to run the application:</p>
+            <pre>
+        <em>Run server on port 5000, and client on port 3000</em>
+        $ npm run dev
+        <br />
+        <em>Only start server on port 5000</em>
+        $ npm start
+        <br />
+        <em>Only start server with watch on port 5000</em>
+        $ npm run server
+        <br />
+        <em>Only run client (port 3000) without server</em>
+        $ npm run client
+        <br />
+        <em>***the scripts above will work with yarn</em>
+            </pre>
+        </div>
+        
+
+        <div class='container'>
+            <h2>Inside the Application</h2>
+            <p>The site can be found 
+            <a href='https://fierce-springs-23091.herokuapp.com/' target='blank'>here.</a></p>
+
+            <h3>Overview</h3>
+            <p>Pip producers uses a roles based authorization method. A user's role is held by
+            their web token. Their are 3 roles: user, contributor and admin. A users role determines
+            what CRUD (create, read, update, destroy) operations they are allowed to perform. New users 
+            will automatically be assigned the role of user upon signing up for the site.</p>
+
+            <ul>
+                <li>Users: can read <em>published</em> blogs</li>
+                <li>Contributors: can read published blogs and publish blogs. They can also save drafts   
+                and read all drafts. Contributors are able to edit and delete published blogs and drafts they 
+                create.</li>
+                <li>Admins: can read and write published/drafts. They can also edit or delete any published 
+                or save draft on the site. Admins can access the <em>users</em> page and elevate users to
+                contributors or admins.</li>
+            </ul>
+            <p><em>Once an admin is created it cannot be revoked at this time</em></p>
+
+            <h3>Responsiveness</h3>
+            <p>This site is fully responsive and should work on any number of different screens. The main 
+            breakpoints are 768px and 1300px. Note: this site does not contain a window.onResize handler 
+            so pages must be refreshed for layout settings to take place after a resize event.</p>
+
+            <h3>Creating Blogs</h3>
+            <p>To create a blog use the 'Create' button on the navbar. The data model for a blog contains 
+            6 elements.</p>
+
+            <ul>
+                <li>Title</li>
+                <li>Author</li>
+                <li>Date</li>
+                <li>Cover image*</li>
+                <li>Blog content</li>
+                <li>Publish option**</li>
+            </ul>
+            <p><em>*Currently the blog supports one file upload per blog.</em></p>
+            <ul>
+                <li>Click "Choose A Cover Image".</li>
+                <li>Select an image (.png, .jpg, .jpeg, .svg) files.</li>
+                <li>Click the upload button. A thumbnail of the image should appear below.</li>
+            </ul>
+            <p><em>**Publish option is set to draft by default. If you wish the publish the blog simply select 
+            'publish' on the 'publish/draft' button assemby.</em></p>
+
+            <h3>Reading Blogs</h3>
+            <p>To find the list page click 'blog' on the left side of the nav bar. If you are logged in as 
+            a user you will see a page titled articles which will list out the blogs. The most current 4-5 Blogs
+            also appear at the bottom of any blog. If you are logged in as a contributor or an admin you will 
+            have the option on the list page to switch between published and drafts. Contributors will be able
+            to read drafts from other contributors, but they will not be able to edit them.</p>
+            
+            <h3>Updating Blogs</h3>
+            <p>A contributor can update any blog, published or draft, they themselves created. Admins can 
+            update any blog on the site. Clicking the 'edit' button on the edit bar will bring the user 
+            to a page that looks like the <em>create</em> page. The difference is the information will be auto 
+            filled into the inputs. The date is the only input that doesn't auto fill and must be re-entered</p>
+
+            <h3>Deleting Blogs</h3>
+            <p>Clicking the 'delete' button on the edit bar will immediately delete the blog from the 
+            database. There currently isn't a confirmation for this process. The blog may not appear to be deleted, 
+            to update the UI the site currently requires a refresh.</p>
+
+            <p>Contributors can delete any blog or draft they create. Admins can delete any blog or draft.</p>
+
+            <p><strong>Note:</strong><em> The developers at Pip Producers kindly ask users not to delete blogs they 
+            didn't create. This will help keep the site stocked with dummy blogs for future users.</em></p>
+
+            <h3>Updating Users</h3>
+            <p>The site currently supports updating users to 'contributor' or 'admin' status. Only admins 
+            are able to update users. Once an admin is created it cannot be undone. Currently the site does 
+            not have a way to delete users.</p>
+
+            <h3>Dummy Users</h3>
+            <p>A user can create their own user account which will instantiate a new account with <em>user</em>
+            privileges</p>
+            
+            <p>There are 9 dummy accounts. 4 users, 3 contributors, and 2 admins.</p>
+
+            <br /><br /><br />
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th scope='col'>Name</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Password</th>
+                        <th scope='col'>Role</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr>
+                        <th>Jimbo Bear</th>
+                        <th>jimbo@bear.com</th>
+                        <th>123456</th>
+                        <th class='admin'>Admin</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Bear Cub</th>
+                        <th>bear@cub.com</th>
+                        <th>123456</th>
+                        <th class='user'>User</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Leo Bear</th>
+                        <th>leo@bear.com</th>
+                        <th>123456</th>
+                        <th class='user'>User</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Agee Bear</th>
+                        <th>agee@bear.com</th>
+                        <th>123456</th>
+                        <th class='contributor'>Contributor</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Maddy Bear</th>
+                        <th>maddy@bear.com</th>
+                        <th>123456</th>
+                        <th class='admin'>Admin</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Casper Bear</th>
+                        <th>casper@bear.com</th>
+                        <th>123456</th>
+                        <th class='contributor'>Contributor</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Eva Bear</th>
+                        <th>eva@bear.com</th>
+                        <th>123456</th>
+                        <th class='user'>User</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Teddy Bear</th>
+                        <th>teddy@bear.com</th>
+                        <th>123456</th>
+                        <th class='user'>User</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Lily Bear</th>
+                        <th>lily@bear.com</th>
+                        <th>123456</th>
+                        <th class='contributor'>Contributor</th>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br /><br />
+
+            <h3>Navbars and Expected Behavior</h3>
+            <p>Site accessibility and authorization is defined in the navbar. That is, nav links appear 
+            differently depending on user authorization level. The 'blog' button appears on the left, but 
+            all other buttons appear on the right.</p>
+
+            <br /><br />
+            <img src='../assets/img/pip-producers/navbar.png' alt='navbar' />
+            <br /><br />
+
+            <p>Buttons will only render if they are relevant to the current role.</p>
+
+            <p>Losing access during a session by refreshing the page or by entering an incorrect URL is 
+            unexpected behavior and could be the result of a bug.</p>
+
+            <p>Currently this site does not have an alert system. Alerts are pending for future updates.</p>
+            <br /><br /><br />
+        </div>
+
+
+        <div class='container'>
+            <h2>Future Updates</h2>
+
+            <ul>
+                <li>Pip button API</li>
+                <li>Scorebar utility</li>
+                <li>Alerts</li>
+                <li>Account deletion</li>
+            </ul>
+        </div>
+
+
+        <h6>Developed by Michael Paul McAuliffe &copy; 2021</h6>
+    </body>
+</html>
