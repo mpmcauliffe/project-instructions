@@ -1,0 +1,12 @@
+.sec {
+    margin-bottom: 5rem;
+}
+.admin {
+    color: #ff0000;
+}
+.user {
+    color: #009900;
+}
+.contributor {
+    color: #0000ff;
+}
