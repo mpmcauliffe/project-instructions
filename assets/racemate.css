@@ -1,0 +1,48 @@
+
+.graph-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.graph-box {
+    height: 4000px;
+    width: 1200px;
+
+    background-size: 25px 25px;
+    background-color: #808080;
+    background-image:
+    linear-gradient(to right, #878787 1px, transparent 1px),
+    linear-gradient(to bottom, #878787 1px, transparent 1px);
+}
+
+
+.single-img {
+    /* width: 70%; */
+    display: flex;
+    justify-content: center;
+}
+.duel-img {
+    display: flex;
+    justify-content: space-around;
+}
+.cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.full-img {
+    width: 700px;
+}
+.half-img {
+    width: 333px;
+}
+.constrained-img {
+    height: 155px;
+}
+
+
+@media only screen and (max-width: 910px){
+    .full-img { width: 89%; }
+}
