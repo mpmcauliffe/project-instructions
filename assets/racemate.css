@@ -7,8 +7,12 @@
 
 .graph-box {
     /* height: 4000px; */
-    width: 1200px;
+    width: 81%;
     padding-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background-size: 25px 25px;
     background-color: #808080;
@@ -18,49 +22,68 @@
 }
 
 
-.single-img {
-    /* width: 70%; */
-    display: flex;
-    justify-content: center;
-}
-.duel-img {
-    display: flex;
-    justify-content: space-around;
-}
-.cell {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.full-band, .double-band, .multi-band, title, .cell { display: flex; }
+
+.double-band, .multi-band { max-width: 800px; }
+
+.full-band { justify-content: center; } 
+
+.double-band { justify-content: space-around; }
+
+.multi-band { justify-content: space-evenly; flex-wrap: wrap; }
+
+.title { 
+    width: 80%;
+    max-width: 1000px;
+    justify-content: flex-start; 
 }
 
+.cell {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .full-img {
-    width: 700px;
+    width: 75%;
+    max-width: 700px;
 }
 .half-img {
-    width: 333px;
+    width: 40%;
+    max-width: 540px;
+}
+.small-img {
+    width: 35%;
+    max-width: 440px;
 }
 .constrained-img {
     height: 155px;
 }
+.non-mobile {
+    width: 17%;
+}
+
 
 
 @media only screen and (max-width: 910px){
+    .graph-box { width: 90%; }
     .full-img { width: 89%; }
 }
 
 @media only screen and (max-width: 715px){
-    /* .graph-container { width: 100vw; } */
-    .graph-box { width: 100%; }
-    .duel-img { width: 100%; flex-direction: column; align-items: center; }
+    .graph-box { width: 90%; }
+    .double-band, .multi-band { width: 100%; flex-direction: column; align-items: center; }
     .half-img { width: 61%; }
-    .constrained-img { height: auto; margin: 0 auto; }
+    .constrained-img { margin: 0 auto; }
 }
 
 @media only screen and (max-width: 480px){
-    /* .graph-container { width: 100vw; } 
     .graph-box { width: 100%; }
-    .duel-img { width: 100%; flex-direction: column; align-items: center; }*/
+    /* .graph-container { width: 100vw; } 
+    .double-band { width: 100%; flex-direction: column; align-items: center; }*/
     .half-img { width: 81%; }
+    .non-mobile { visibility: hidden; }
     /* .constrained-img { height: auto; margin: 0 auto; } */
 }
 
